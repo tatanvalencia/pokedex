@@ -8,7 +8,11 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
-      forbidNonWhitelisted: true
+      forbidNonWhitelisted: true,
+      transform: true, //Permite transformar DTOs ejemplo pagination que llega con string lo convierte a number
+      transformOptions: {
+        enableImplicitConversion: true
+      }
     })
   )
   await app.listen(3000);
