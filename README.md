@@ -47,6 +47,29 @@
   localhost:3000/api/v2/seed
 ```
 
+
+# Prod build
+
+1. Crear el archivo
+
+```
+.env.prod
+```
+
+2. Asignar las variables de entorno de pdn
+
+3. Crear la nueva imagen
+
+```
+  docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
+
+4. Ejecutar comando para reconstruir los contenedores en caso de haberlos eliminado
+
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up -d
+```
+
 ## Stack usado.
 
 * MongoDB.
